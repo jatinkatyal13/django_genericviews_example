@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+	<body>
+		<h1> {{ object.name }} </h1>
+		<h3> Songs: </h3>
+		<ul>
+			{% for song in object.song_set.all %}
+				<li> <a href="{% url 'song' slug=song.slug %}"> {{ song.name }} </a> </li>
+			{% endfor %}
+		</ul>
+	</body>
+
+{% endblock %}

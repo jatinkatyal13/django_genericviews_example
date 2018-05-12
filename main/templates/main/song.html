@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+	<body>
+		<h1> {{ object.name }} </h1>
+		<ul>
+			<li>
+				<iframe width="420" height="315" src="{{ object.link }}"></iframe>
+			</li>
+			<li> Artist: {{ object.artist.name }} </li>
+			<li> Genres: {% for genre in object.genre.all %} {{ genre }}, {% endfor %} </li>
+		</ul>
+	</body>
+
+{% endblock %}
